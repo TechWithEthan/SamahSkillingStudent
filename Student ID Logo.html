@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student College ID Card</title>
+  <style>
+    body {
+      font-family:revert;
+      margin: 0;
+      padding: 0;
+      background-color: powderblue;
+    }
+
+    .id-card {
+      width: 300px;
+      margin: 20px auto;
+      background-color: whitesmoke;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .details {
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
+    footer {
+    background-color: #2f4f4f;
+    color: #add8e6;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  </style>
+</head>
+<body>
+  <div class="id-card">
+    <div class="logo">
+      <img src="Xavier Campus .png" alt="College Logo">
+    </div>
+    <div class="details">
+      <h1>Student ID Card</h1>
+      <p><strong>Name:</strong> <span id="studentName"></span> <span id="studentLastName"></span></p>
+      <p><strong>Student ID:</strong> <span id="studentID"></span></p>
+      <p><strong>Course:</strong> Comptia IT HardWare </p>
+      <p><strong>Batch:</strong> 2</p>
+    </div>
+  </div>
+
+  <script>
+    // Generate Student Name and Last Name
+    var firstName = "";
+    var lastName = "";
+    document.getElementById("studentName").textContent = firstName;
+    document.getElementById("studentLastName").textContent = lastName;
+
+    // Generate Student ID (You can generate this dynamically as well)
+    var studentID = 
+    document.getElementById("studentID").textContent = studentID;
+  </script>
+    <footer>
+        &copy; 2024 Samah Skilling Student Website. All rights reserved by Samah Skilling Xaviers Campus
+      </footer>
+    
+</body>
+</html>

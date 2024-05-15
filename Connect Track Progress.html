@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Attendance Detective</title>
+    <link rel="icon" href="Samah Skilling logo new.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Auto Attendance Detective</h1>
+        <form id="attendanceForm">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" required>
+            
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="">Select Course</option>
+                <option value="IT Hardware">IT Hardware</option>
+                <option value="Softkills">Softkills</option>
+                <option value="History">History</option>
+                <!-- Add more options as needed -->
+            </select>
+            
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="">Select Status</option>
+                <option value="Enrolled">Enrolled</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            
+            <button type="submit">Detect Attendance</button>
+        </form>
+        
+        <h2>Auto Attendance Results</h2>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Course</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Attendance results will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const studentName = document.getElementById('studentName').value;
+            const course = document.getElementById('course').value;
+            const status = document.getElementById('status').value;
+            const date = new Date().toLocaleDateString(); // Current date
+            
+            // Append new row to the table
+            const table = document.getElementById('attendanceTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td>${studentName}</td>
+                <td>${course}</td>
+                <td>${status}</td>
+                <td>${date}</td>
+            `;
+            // Reset form
+            document.getElementById('attendanceForm').reset();
+        });
+    </script>
+      <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

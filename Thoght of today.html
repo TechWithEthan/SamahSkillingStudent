@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thought of the Day</title>
+<link rel="icon" href="Samah Skilling logo new.png" type="image/x-icon">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">\
+<style>
+    body {
+        font-family:'Times New Roman', Times, serif;
+        background-color: powderblue;
+        padding: 20px;
+        animation: fadeIn 2s ease-in-out; 
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    header h1 {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        animation: slideIn 1s ease-in-out; 
+    }
+    @keyframes slideIn {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    .thought {
+        font-size: 18px;
+        line-height: 1.6;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* Footer styles */
+    footer {
+        background-color: orange;
+        color: black;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 14px; 
+        animation: fadeIn 2s ease-in-out; 
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Daily Thought Of the Day</h1>
+    </header>
+<div class="container">
+    <h1 id="thoughtTitle">Today's Thought in Jesus Christ</h1>
+    <p class="thought" id="thoughtContent">"Success is not just about making the right moves; it's also about learning from the wrong ones. Embrace every experience as a step toward greatness."</p>
+</div>
+<script>
+    // Get the current hour
+    const currentHour = new Date().getHours();
+    // Check if it's past 12 AM (midnight)
+    if (currentHour >= 0 && currentHour < 12) {
+        document.getElementById('thoughtTitle').textContent = "Today's Thought in Jesus Christ";
+        document.getElementById('thoughtContent').textContent = "Every sunrise brings new opportunities for growth and learning. Embrace today's challenges with enthusiasm and determination.";
+    } else if (currentHour >= 12 && currentHour < 18) {
+        document.getElementById('thoughtTitle').textContent = "Afternoon Reflection";
+        document.getElementById('thoughtContent').textContent = "Midday is a reminder to pause, reflect, and recharge. Take a moment to appreciate your accomplishments and plan for continued success.";
+    } else {
+        document.getElementById('thoughtTitle').textContent = "Evening Wisdom";
+        document.getElementById('thoughtContent').textContent = "As the day ends, reflect on your achievements and lessons learned. Prepare for tomorrow's challenges with a positive mindset and renewed energy.";
+    }
+    // Translate the header and container on click
+    const header = document.querySelector('header');
+    const container = document.querySelector('.container');
+    header.addEventListener('click', () => {
+        header.style.transform = 'translateX(100px)';
+        container.style.transform = 'translateX(-100px)';
+    });
+</script>
+<footer>
+    &copy; 2024 Samah Skilling Student Website. All rights reserved by Samah Skilling Xaviers Campus
+</footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

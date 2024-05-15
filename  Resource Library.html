@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Library</title>
+    <link rel="icon" href="Samah Skilling logo new.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        #resourceCards .card {
+            margin-bottom: 20px;
+            max-width: 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 8px 8px 0 0;
+            padding: 10px 15px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 16px;
+            color: #555;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card {
+                max-width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: powderblue;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Resource Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Content Section -->
+    <div class="container mt-4">
+        <h1 class="mb-4">Welcome to the Resource Library</h1>
+        <!-- Resource Cards -->
+        <div class="row" id="resourceCards">
+            <!-- Resource cards will be dynamically added here using JavaScript -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5s.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Example data for resource cards
+        const resources = [
+            { title: 'Resource 1', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', link:'https://chatgpt.com/c/e2416acb-6156-40a1-bb86-d4a010df74e3' },
+            { title: 'Resource 2', description: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.', link: '#' },
+            { title: 'Resource 3', description: 'Nulla facilisi. Mauris vel ante sed nunc ornare molestie.', link: '#' }
+        ];
+
+        // Function to generate resource cards
+        function generateResourceCards() {
+            const resourceCardsContainer = document.getElementById('resourceCards');
+            resourceCardsContainer.innerHTML = ''; // Clear previous cards
+
+            resources.forEach(resource => {
+                const card = `
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${resource.title}</h5>
+                                <p class="card-text">${resource.description}</p>
+                                <a href="${resource.link}" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                resourceCardsContainer.innerHTML += card;
+            });
+        }
+        // Call the function to generate resource cards on page load
+        window.addEventListener('load', generateResourceCards);
+    </script>
+</body>
+</html>

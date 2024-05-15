@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back | Samah Skilling Student Website</title>
+    <link rel="icon" href="Samah Skilling logo new.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: indigo;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            align-items: center;
+        }
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: brown;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 1.5s ease, transform 0.9s ease;
+        }
+        .navbar a:hover {
+            background-color: powderblue;
+            transform: scale(1.1);
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown .nav-link {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: greenyellow;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .navbar a:hover, .dropdown:hover .nav-link {
+            background-color:powderblue;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        footer {
+            background-color: #2f4f4f;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 30px;
+            animation-duration: initial;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color:white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            line-height: 1.5;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100%; 
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F8F9FA;">
+    <a class="navbar-brand ms-auto" href="#">
+        <img src="Images /Samah Skilling logo new.png" style="height: 70px;" alt="Samah Skilling Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mx-auto" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#home" style="color: #007BFF;">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #007BFF;">
+                    About Us
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    <li><a class="dropdown-item" href="About Us.html">About Us</a></li>
+                    <li><a class="dropdown-item" href="About lab assistant.html">About Lab Assistant</a></li>
+                    <li><a class="dropdown-item" href="Director message.html">Director's Message</a></li>
+                    <li><a class="dropdown-item" href="Help desk.html">Help Desk</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #007BFF;">
+                    Classroom Material
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                    <li><a class="dropdown-item" href="waiting.html">Upcoming Classroom Test</a></li>
+                    <li><a class="dropdown-item" href="Classrom Announcements.html">Classroom Announcements</a></li>
+                    <li><a class="dropdown-item" href="Samah Skilling Student Noticeboard.html">Noticeboard</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Contact us.html" style="color: #007BFF;">Contact Us</a>
+            </li>
+            <!-- Other navbar items -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #007BFF;">
+                    Events
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                    <li><a class="dropdown-item" href="Virtual Tours.html">Virtual Tours</a></li>
+                    <li><a class="dropdown-item" href="video player.html">Event invitation</a></li>
+                    <li><a class="dropdown-item" href="Images /Christmas party.mp4">Event Video</a></li>
+                    <!-- Dropdown menu items -->
+                    <li><a class="dropdown-item" href="waiting.html">Event Memories videos</a></li>
+                    <li><a class="dropdown-item" href="College Calendar 2023-2024.html">College Calendar</a></li>
+                    <li><a class="dropdown-item" href="Holiday events.html">Holiday Events</a></li>
+                    <li><a class="dropdown-item" href="te.html">Title</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Logout Page Successful.html" style="color: #007BFF;">Sign-out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="welcome-message">
+        <h1>Welcome Back to Samah Skilling Student Website</h1>
+        <p>Welcome back to the Samah Skilling Student Website! We're excited to have you with us again, ready to dive into a journey of learning and growth. Explore a world of opportunities and connect with fellow students as you embark on this enriching experience. Our courses offer a vast realm of knowledge and skill-building, waiting for you to explore. Here, learning knows no limits, and every click brings you closer to excellence. Your curiosity fuels success, and passion opens new horizons. Join our dedicated community, shaping futures and fostering brilliance together. Let's soar to new heights of achievement and discovery as you return to your gateway of endless possibilities and lifelong learning.</p>
+    </div>
+    <div class="actions">
+        <a href="SamahSkilling StudentCollge TimeTable_St. Xaviers Campus.html" class="button">View Courses</a>
+    </div>
+</div>
+<footer>
+    &copy; 2024 Samah Skilling Student Website. All rights reserved by Samah Skilling Xaviers Campus
+</footer>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

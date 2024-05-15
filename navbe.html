@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Navbar</title>
+<style>
+  /* Basic CSS Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  /* Body styles */
+  body {
+    background-color: #fff; /* Set background color of the entire page */
+  }
+ 
+  /* Navbar styles */
+  nav {
+    background-color: #000; /* Set background color of the navbar */
+    color: #fff;
+    display: flex;
+    justify-content: center; /* Center the navbar horizontally */
+    align-items: center;
+    padding: 1rem;
+  }
+ 
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+ 
+  nav ul li {
+    margin-right: 1rem;
+  }
+ 
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+ 
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+ 
+  nav ul li a:hover {
+    background-color: #555;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+</body>
+</html>
