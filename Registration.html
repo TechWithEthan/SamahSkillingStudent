@@ -39,12 +39,21 @@
     .btn-submit:hover {
       background-color: #0056b3;
     }
+    /* Adjustments for the logo image */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+    }
+    .logo-container img {
+      max-width: 150px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="text-center mb-4">
-      <img src="Images/XIE Logo.png" alt="XIE Logo" class="img-fluid" style="max-width: 150px;">
+    <div class="logo-container mb-4">
+      <img src="Images/XIE Logo.png" alt="XIE Logo" class="img-fluid">
     </div>
     <h1 class="text-center mb-4">Registration Form</h1>
     <form id="registrationForm">
