@@ -7,24 +7,18 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-image: url('IT Students First Batch 1.jpg');
+      background-image: url('background-image.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
     }
     .container {
-      max-width: 500px;
+      max-width: 600px;
       margin: 50px auto;
       padding: 30px;
       border-radius: 10px;
       background-color: #f8f9fa;
       box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-      animation: backgroundColorChange 2s infinite alternate;
-    }
-    @keyframes backgroundColorChange {
-      0% { background-color: #f8f9fa; }
-      50% { background-color: #e0e0e0; }
-      100% { background-color: #f8f9fa; }
     }
     .form-group {
       margin-bottom: 20px;
@@ -35,7 +29,7 @@
     .btn-submit {
       width: 100%;
       padding: 10px;
-      background-color: #7e16f5;
+      background-color: #007bff;
       border: none;
       border-radius: 5px;
       color: #fff;
@@ -43,7 +37,7 @@
       transition: background-color 0.3s ease;
     }
     .btn-submit:hover {
-      background-color: #6a13d1;
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -54,22 +48,29 @@
     </div>
     <h1 class="text-center mb-4">Registration Form</h1>
     <form id="registrationForm">
-      <div class="form-group">
-        <label for="fullName" class="form-label">Full Name</label>
-        <input type="text" class="form-control" id="fullName" name="fullName" required onclick="clearText('fullName')">
-      </div>
-      <div class="form-group">
-        <label for="LastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="fullName" name="fullName" required onclick="clearText('fullName')">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" required>
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required onclick="clearText('email')">
+        <input type="email" class="form-control" id="email" name="email" required>
       </div>
       <div class="form-group">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" required onclick="clearText('password')">
+        <input type="password" class="form-control" id="password" name="password" required>
       </div>
+      <!-- Additional fields can be added here -->
       <button type="submit" class="btn btn-submit">Register</button>
     </form>
   </div>
@@ -81,10 +82,6 @@
       alert('Registration successful!'); // Placeholder for demonstration
       // You can redirect to another page or perform other actions after successful registration
     });
-
-    function clearText(id) {
-      document.getElementById(id).value = '';
-    }
   </script>
 </body>
 </html>
