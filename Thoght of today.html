@@ -73,21 +73,21 @@
     // Get the current hour
     const currentHour = new Date().getHours();
     // Check if it's past 12 AM (midnight)
-    if (currentHour >= 0 && currentHour < 12) {
-        document.getElementById('thoughtTitle').textContent = "Today's Thought in Jesus Christ";
-        document.getElementById('thoughtContent').textContent = "Every sunrise brings new opportunities for growth and learning. Embrace today's challenges with enthusiasm and determination.";
-    } else if (currentHour >= 12 && currentHour < 18) {
+    if (current hour >= 0 && current hour < 12) {
+        document.getElementById('thoughtTitle').textContent = "Today's Thought of Day ";
+        document.getElementById('thoughtContent').textContent = "Thought of the Day: "Jesus said, 'Let the little children come to me, and do not hinder them, for the kingdom of heaven belongs to such as these.' (Matthew 19:14) In 2024, let us remember the boundless love and grace that Jesus has for His children. May we approach each day with the innocence, faith, and joy of a child, knowing that we are embraced by His everlasting arms. Let His light guide us, His wisdom teach us, and His love inspire us to be kind, compassionate, and faithful in all we do.".";
+    } else if (current hour >= 12 && current hour < 18) {
         document.getElementById('thoughtTitle').textContent = "Afternoon Reflection";
         document.getElementById('thoughtContent').textContent = "Midday is a reminder to pause, reflect, and recharge. Take a moment to appreciate your accomplishments and plan for continued success.";
     } else {
         document.getElementById('thoughtTitle').textContent = "Evening Wisdom";
         document.getElementById('thoughtContent').textContent = "As the day ends, reflect on your achievements and lessons learned. Prepare for tomorrow's challenges with a positive mindset and renewed energy.";
     }
-    // Translate the header and container on click
+    // Translate the header and container by clicking
     const header = document.querySelector('header');
     const container = document.querySelector('.container');
     header.addEventListener('click', () => {
-        header.style.transform = 'translateX(100px)';
+        header. style.transform = 'translateX(100px)';
         container.style.transform = 'translateX(-100px)';
     });
 </script>
