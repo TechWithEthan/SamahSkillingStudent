@@ -46,7 +46,6 @@
         line-height: 1.6;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    /* Footer styles */
     footer {
         background-color: orange;
         color: black;
@@ -67,7 +66,7 @@
 </header>
 <div class="container">
     <h1 id="thoughtTitle">Today's Thought in Jesus Christ</h1>
-    <p class="thought" id="thoughtContent">"Success is not just about making the right moves; it's also about learning from the wrong ones. Embrace every experience as a step toward greatness."</p>
+    <p class="thought" id="thoughtContent"></p>
 </div>
 <script>
     // Get the current hour
@@ -75,17 +74,7 @@
     // Check if it's past 12 AM (midnight)
     if (currentHour >= 0 && currentHour < 12) {
         document.getElementById('thoughtTitle').textContent = "Today's Thought in Jesus Christ";
-        document.getElementById('thoughtContent').textContent = "Let not your heart be troubled: ye believe in God, believe also in me."
-— John 14:1
-
-Remember, no matter what challenges you face today, trust in the Lord. He is always with you, guiding you and giving you strength. 🌿
-
-Have a blessed day! 🙏
-— John 14:1
-
-Remember, no matter what challenges you face today, trust in the Lord. He is always with you, guiding you and giving you strength. 🌿
-
-Have a blessed day! 🙏";
+        document.getElementById('thoughtContent').textContent = "\"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.\" – Albert Schweitzer\n\n— John 14:1\n\nRemember, no matter what challenges you face today, trust in the Lord. He is always with you, guiding you and giving you strength. 🌿\n\nHave a blessed day! 🙏";
     } else if (currentHour >= 12 && currentHour < 18) {
         document.getElementById('thoughtTitle').textContent = "Afternoon Reflection";
         document.getElementById('thoughtContent').textContent = "Midday is a reminder to pause, reflect, and recharge. Take a moment to appreciate your accomplishments and plan for continued success.";
@@ -94,7 +83,7 @@ Have a blessed day! 🙏";
         document.getElementById('thoughtContent').textContent = "As the day ends, reflect on your achievements and lessons learned. Prepare for tomorrow's challenges with a positive mindset and renewed energy.";
     }
 
-    // Translate the header and container by clicking
+    // Translate the header and container on click
     const header = document.querySelector('header');
     const container = document.querySelector('.container');
     header.addEventListener('click', () => {
