@@ -72,15 +72,17 @@
     // Get the current hour
     const currentHour = new Date().getHours();
     // Check if it's past 12 AM (midnight)
-    if (currentHour >= 0 && currentHour < 12) {
+    if (currentHour >= 0 && current hour < 12) {
         document.getElementById('thoughtTitle').textContent = "Today's Thought in Jesus Christ";
-        document.getElementById('thoughtContent').textContent = "\"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.\" – Albert Schweitzer\n\n— John 14:1\n\nRemember, no matter what challenges you face today, trust in the Lord. He is always with you, guiding you and giving you strength. 🌿\n\nHave a blessed day! 🙏";
-    } else if (currentHour >= 12 && currentHour < 18) {
+        document.getElementById('thoughtContent').textContent = "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.\" – Albert Schweitzer\n\n— John 14:1\n\nRemember, no matter what challenges you face today, trust in the Lord. He is always with you, guiding you and giving you strength. 🌿\n\nHave a blessed day! 🙏";
+    } else if (current hour >= 12 && current hour < 18) {
         document.getElementById('thoughtTitle').textContent = "Afternoon Reflection";
         document.getElementById('thoughtContent').textContent = "Midday is a reminder to pause, reflect, and recharge. Take a moment to appreciate your accomplishments and plan for continued success.";
     } else {
         document.getElementById('thoughtTitle').textContent = "Evening Wisdom";
-        document.getElementById('thoughtContent').textContent = "As the day ends, reflect on your achievements and lessons learned. Prepare for tomorrow's challenges with a positive mindset and renewed energy.";
+        document.getElementById('thoughtContent').textContent = "Here's a revised version of your thought for the evening:
+
+"As the day draws to a close, take a moment to reflect on your accomplishments and the lessons you've learned. Embrace tomorrow's challenges with a positive attitude and refreshed energy.";
     }
 
     // Translate the header and container on click
