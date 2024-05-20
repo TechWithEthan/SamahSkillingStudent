@@ -1,112 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="Images/Samah Skilling logo new.png" type="image/x-icon">
-  <title>St. Xaviers Campus Registration Form</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-image: url('background-image.jpg');
-      background-size cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-color: powderblue; /* Fallback background color */
-    }
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 30px;
-      border-radius: 10px;
-      background-color: #f8f9fa;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-label {
-      font-weight: bold;
-    }
-    .btn-submit {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn-submit:hover {
-      background-color: #0056b3;
-    }
-    /* Adjustments for the logo image */
-    .logo-container {
-      display: flex;
-      justify-content: center;
-    }
-    .logo-container img {
-      max-width: 150px;
-      height: auto;
-    }
-    /* Footer styles */
-    .footer {
-      text-align: center;
-      padding: 20px 0;
-      background-color: #343a40;
-      color: #fff;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ADD8E6;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 700px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+
+        .form-control:focus {
+            border-color: #0056b3;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-primary:focus {
+            box-shadow: none;
+        }
+
+        .mb-3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-5 {
+            margin-top: 3rem;
+        }
+    </style>
 </head>
-<body style"background">
-  <div class="container">
-    <div class="logo-container mb-4">
-      <img src="Images/Xaviers.jpg" alt="XIE Logo" class="IMG-fluid">
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">College Registration Form</h2>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <div class="mb-3">
+                <label for="studentName" class="form-label">Student Name</label>
+                <input type="text" class="form-control" id="studentName" required>
+            </div>
+            <div class="mb-3">
+                <label for="parentName" class="form-label">Parent/Guardian Name</label>
+                <input type="text" class="form-control" id="parentName" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" id="address" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="course" class="form-label">Course Interested</label>
+                <select class="form-control" id="course" required>
+                    <option value="">Select Course</option>
+                    <option value="science">Science</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="arts">Arts</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
     </div>
-    <h1 class="text-center mb-4">Registration Form</h1>
-    <form id="registrationForm">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="firstName" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" required>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" required>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-      </div>
-      <!-- Additional fields can be added here -->
-      <button type="submit" class="btn btn-submit">Register</button>
-    </form>
-  </div>
 
-  <div class="footer">
-    &copy; 2024 St. Xaviers Campus. All rights reserved.
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validateForm() {
+            const studentName = document.getElementById('studentName').value;
+            const parentName = document.getElementById('parentName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const course = document.getElementById('course').value;
 
-  <script>
-    document.getElementById('registrationForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form submission
-      // You can add form validation and submission logic here
-      alert('Registration successful!'); // Placeholder for demonstration
-      // You can redirect to another page or perform other actions after successful registration
-    });
-  </script>
+            if (!studentName || !parentName || !email || !phone || !address || !course) {
+                alert("All fields are required!");
+                return false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address!");
+                return false;
+            }
+
+            const phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(phone)) {
+                alert("Please enter a valid 10-digit phone number!");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
 </body>
+
 </html>
