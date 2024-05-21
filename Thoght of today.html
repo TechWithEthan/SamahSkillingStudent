@@ -74,23 +74,18 @@
 
     // Set the thought of the day based on the current time
     if (currentHour >= 0 && currentHour < 12) {
-        document.getElementById('thoughtTitle').textContent = "Today's Thought in Jesus Christ";
-        document.getElementById('thoughtContent').textContent = "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.\" – Albert Schweitzer\n\n— John 14:1\n\nRemember, no matter what challenges you face today, trust in the Lord. He is always with you, guiding you and giving you strength. 🌿\n\nHave a blessed day! 🙏";
+        document.getElementById('thoughtTitle').textContent = "Morning Thought";
+        document.getElementById('thoughtContent').textContent = "This is the day the Lord has made; We will rejoice and be glad in it. — Psalm 118:24\n\nStart your day with gratitude, acknowledging the gift of a new beginning and the opportunity to make a positive impact.";
     } else if (currentHour >= 12 && currentHour < 18) {
         document.getElementById('thoughtTitle').textContent = "Afternoon Reflection";
-        document.getElementById('thoughtContent').textContent = "Midday is a reminder to pause, reflect, and recharge. Take a moment to appreciate your accomplishments and plan for continued success.";
-    } else {
+        document.getElementById('thoughtContent').textContent = "Trust in the Lord with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He shall direct your paths. — Proverbs 3:5-6\n\nAs the day progresses, remind yourself to trust in divine guidance. Even in moments of uncertainty, have faith that you are being led along the right path.";
+    } else if (currentHour >= 18 && currentHour < 21) {
         document.getElementById('thoughtTitle').textContent = "Evening Wisdom";
-        document.getElementById('thoughtContent').textContent = "As the day draws to a close, take a moment to reflect on your accomplishments and the lessons you've learned. Embrace tomorrow's challenges with a positive attitude and refreshed energy.";
+        document.getElementById('thoughtContent').textContent = "Come to me, all you who labor and are heavy laden, and I will give you rest. — Matthew 11:28\n\nReflect on your day's work and find solace in the promise of rest and rejuvenation. Take this time to unwind and renew your spirit.";
+    } else {
+        document.getElementById('thoughtTitle').textContent = "Night Peace";
+        document.getElementById('thoughtContent').textContent = "I will both lie down in peace, and sleep; For You alone, O Lord, make me dwell in safety. — Psalm 4:8\n\nReflect on the peace that comes from trusting in the Lord's protection and care as you rest for the night.";
     }
-
-    // Translate the header and container on click
-    const header = document.querySelector('header');
-    const container = document.querySelector('.container');
-    header.addEventListener('click', () => {
-        header.style.transform = 'translateX(100px)';
-        container.style.transform = 'translateX(-100px)';
-    });
 </script>
 <footer>
     &copy; 2024 Samah Skilling Student Website. All rights reserved by Samah Skilling Xaviers Campus
