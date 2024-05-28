@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="Images/Samah Skilling logo new.png" type="image/x-icon" alt="Samah Skilling Logo">
   <title>Contact Us</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Add FontAwesome library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #e1e1e1; /* Updated background color */
+      background-color: powderblue;
     }
     .container {
-      max-width: 600px;
-      margin: 50px auto;
-      background-color: #f0f8ff; /* Updated background color to a professional shade of powder blue */
+      background-color: lightyellow;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -34,34 +32,48 @@
         opacity: 1;
       }
     }
-    h1 {
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    h1, h4 {
       font-size: 24px;
       margin-bottom: 20px;
       text-align: center;
-      color: #333; /* Updated heading color for better readability */
+      color: #333;
+    }
+    .contact-details {
+      animation: fadeInUp 1s ease-in-out;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    .contact-details:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    .contact-details:nth-child(2) {
+      animation-delay: 1s;
+    }
+    .contact-details:nth-child(3) {
+      animation-delay: 1.5s;
     }
     .contact-info {
       margin-bottom: 20px;
-      color: #333; /* Updated contact info color for better readability */
+      color: #333;
     }
     .contact-info p {
       margin: 10px 0;
     }
-    .contact-info a {
-      color: #333; /* Ensure links in contact info match the text color */
-      text-decoration: none;
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
     .contact-info i {
       margin-right: 10px;
     }
-    .btn {
-      display: block;
+    .btn-custom {
       width: 100%;
-      padding: 10px;
-      text-align: center;
       background-color: peru;
       color: #fff;
       border: none;
@@ -69,10 +81,9 @@
       cursor: pointer;
       text-decoration: none;
     }
-    .btn:hover {
-      background-color: #cc6600; /* Adjusted hover color to a darker shade of the original button color */
+    .btn-custom:hover {
+      background-color: #b35900;
     }
-    /* Footer styles */
     footer {
       background-color: #2f4f4f;
       color: #fff;
@@ -83,21 +94,58 @@
       left: 0;
       width: 100%;
     }
+    .location-icon {
+      font-size: 48px;
+      color: #ff4500;
+      text-align: center;
+      display: block;
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container mt-5">
     <h1>Contact Us</h1>
-    <div class="contact-info">
-      <p><i class="fas fa-map-marker"></i> Stripes Academy - Xavier's Campus Mahakali Caves Rd, Chakala, Andheri East, Mumbai, Maharashtra 400093</p>
-      <p><i class="fas fa-phone"></i> Contact: <a href="tel:+1234567890">+1234567890</a></p> 
-      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:xavierscampus@gmail.com">xavierscampus@gmail.com</a></p>
-      <p><i class="fas fa-arrow-left"></i> <a href="WelcomeBack_Page.html">Click here to Go Back</a></p>
-    </div>
-    <a href="mailto:xavierscampus@gmail.com" class="btn">Send Message</a>
+    <section class="contact">
+      <div class="row text-center">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <i class="fas fa-phone"></i>
+              <div class="contact-details"><br>
+                <h4>Contact</h4><br>
+                <p>M: +1234567890</p>
+              </div>
+            </div>
+            <div class="col-md-4 text-center">
+              <i class="fas fa-clock"></i>
+              <div class="contact-details"><br>
+                <h4>Working Hours:</h4><br>
+                <p>Monday-Friday: 9am-3:30pm</p>
+                <p>Saturday-Sunday: Closed</p>
+              </div>
+            </div>
+            <div class="col-md-4 text-center">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="contact-details"><br>
+                <h4>Location:</h4><br>
+                <p>St. XAVIER'S CAMPUS, Shilpalaya, Vinayalaya Compound, Mahakali Caves Rd, Gundavali, Andheri East, Mumbai, Maharashtra 400093</p>
+              </div>
+            </div>
+          </div><br><br>
+          <div class="row mt-5">
+            <div class="col text-center">
+              <!-- Google Maps iframe code goes here -->
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60316.388749365055!2d72.78798912167969!3d19.11755500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9000d0195cf%3A0x29b0bbfdf89dc19f!2sSt.%20XAVIER&#39;S%20CAMPUS!5e0!3m2!1sen!2sin!4v1716909935522!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          </div>
+        </div>
+      </div>
+    </section>
   </div>
   <footer>
-    &copy; 2024 Samah Skilling Student Website. All rights reserved by Samah Skilling Xaviers Campus.
+    &copy; 2024 Samah Skilling Student Website. All rights reserved by Samah Skilling Xaviers Campus
   </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
