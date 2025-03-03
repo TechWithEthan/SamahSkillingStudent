@@ -1,48 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samah Skilling Student Noticeboard</title>
-    <link rel="icon" href="Images/Samah Skilling logo new.png" type="image/x-icon"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title> Samah Skilling Noticeboard</title>
+    <link rel="icon" href="Images/Samah Skilling logo new.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Resetting default styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
 
-        /* Body styles */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: powderblue;
-            color: #333;
-            padding: 20px;
-        }
+.header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-        /* Header styles */
-        header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-            margin-bottom: 20px; /* Add margin to separate header from content */
-        }
+.announcement {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
-        /* Main content styles */
-        main {
-            background-color: powderblue;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 800px; /* Limit the width of main content */
-            margin: 0 auto; /* Center the main content horizontally */
-        }
+.announcement h1 {
+    color: #007bff;
+    font-size: 2rem;
+}
 
-        /* Footer styles */
-        footer {
+.announcement p {
+    font-size: 1.2rem;
+}
+
+.logo {
+    margin-top: 10px;
+    width: 150px;
+}
+
+/* RSVP Section */
+.rsvp-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-container p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.rsvp-container img {
+    width: 100px;
+}
+footer {
             background-color: #2f4f4f;
             color: #fff;
             padding: 10px 0;
@@ -52,58 +76,40 @@
             left: 0;
             width: 100%;
         }
-
-        /* Advertisement styles */
-        .advertisement {
-            background-color: wheat;
-            color: #333;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            text-align: justify;
-            line-height: 1.8;
-            min-width: 300px;
-            max-width: 600px;
-            margin: 0 auto;
-            overflow: hidden;
-            white-space: pre-wrap; /* Preserve whitespace */
-        }
-        .advertisement p {
-            animation: moveText 10s infinite alternate-reverse; /* Auto-change every 10 seconds */
-        }
-
-        /* Logo styles */
-        .logo {
-            max-width: auto; /* Adjust the size as needed */
-            height: auto; /* Maintain aspect ratio */
-        }
-    </style>
+</style>
 </head>
-
 <body>
-    <header>
-        <img src="XIE Logo.png" alt="" class="logo"> 
-        <h1>Student Notice Board</h1>
+    <header class="header">
+        <h1>Classroom Announcements - Samah Skilling Xaviers Campus</h1>
     </header>
-    <main>
-        <div class="article">
-            <h1>Welcome to Your New College</h1>
-            <p>Dear Students,</p>
-            <p>We extend a warm welcome to each of you as you embark on this exciting journey at our college. This is not just a place for learning; it's a community where friendships are forged, dreams are nurtured, and excellence is achieved.</p>
-            <p>As you step into this new chapter of your academic life, remember that every challenge is an opportunity to grow, every setback is a lesson in resilience, and every success is a testament to your hard work.</p>
-            <p>We encourage you to explore, discover, and make the most of all the resources and opportunities available to you. Let's work together to create a vibrant and inclusive environment where everyone can thrive.</p>
-            <p>Wishing you a fulfilling and enriching experience ahead!</p>
-            <br>
-            <p>Best regards,</p>
-            <p>[St. Xaviers Campus - Samah Skilling] Administration</p>
+    
+    <div class="announcement">
+        <p><strong>PLEASE JOIN US</strong></p>
+        <img src="Images/graduationcap.png" alt="Graduation Cap" class="logo">
+        <h2>Join Us for the Graduation Ceremony</h2>
+        <h1>GRADUATION</h1>
+        <p><strong>Samah Skilling Certificate Course for IT Hardware Technician</strong></p>
+        <h2><strong>March 15, 2025</strong></h2>
+        <h3>At 10:00 A.M</h3>
+        <p><strong>Venue:</strong><br>
+        St. Xavier's Campus for Upskilling,<br>
+        Vinayalaya, Mahanakali Caves Road,<br>
+        Next to Gurunanak Mission School,<br>
+        Andheri East, Mumbai 400093</p>
+        <div class="rsvp-container">
+            <p><strong>RSVP:</strong> 981199-03136</p>
+            <img src="Images/Samah Skilling logo new.png" alt="Samah Skilling Logo">
         </div>
-</main>
-    <br>
-    <footer>
-        <p>&copy; 2024 Samah Skilling Student Website. All rights reserved by Samah Skilling Xaviers Campus</p>
-    </footer>
-</script>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+    <div id="footer">
+        <footer class="footer">
+            &copy; 2024 All rights reserved | Designed and Powered by Samah Skilling Xaviers Campus
+        </footer>
+        
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
