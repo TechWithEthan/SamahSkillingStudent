@@ -8,12 +8,12 @@
   <meta name="keywords" content="Virtual Background, Video Player, Samah Skilling, Students">
   <meta name="author" content="Samah Skilling">
   <title>Virtual Background Video Player</title>
-  <link rel="icon" href="Images/Samah Skilling logo new.png" type="image/x-icon">
+
+  <link rel="icon" href="Images/xie-logo.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    body,
-    html {
+    body, html {
       height: 100%;
       font-family: serif;
       background-color: powderblue;
@@ -21,97 +21,125 @@
       padding: 0;
     }
 
-    .video-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #bg-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .logo {
-      position: relative;
-      z-index: 1;
-      width: 500px;
-      height: 90px;
+    .media-container {
+      width: 900px;
+      max-width: 100%;
+      margin: 20px auto;
       text-align: center;
-      transition: transform 0.3s ease;
     }
 
-    .logo img {
+    /* ⭐ OAS Fade-in Animation */
+    .fade-oas {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeInOAS 1.8s ease-out forwards;
+    }
+
+    @keyframes fadeInOAS {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .media-container img {
       width: 100%;
       height: auto;
-    }
-
-    .logo:hover {
-      transform: scale(1.1);
+      border-radius: 8px;
     }
 
     footer {
       background-color: darkblue;
       color: #fff;
-      padding: 1px 0;
+      padding: 5px 0;
       text-align: center;
       position: fixed;
       bottom: 0;
-      left: 0;
       width: 100%;
     }
   </style>
 </head>
 
 <body>
-  <div class="d-flex justify-content-center align-items-center flex-column">
-    <div class="logo text-center m-3">
-      <img src="Images/XIE Logo.png" alt="Samah Skilling Logo">
-    </div>
-    <div class="video-container">
-      <video id="bg-video" loop autoplay muted>
-        <source src="Images/Xavier's Campus Christmas Party and Carols 11th december 2024.mp4.mp4" type="video/mp4" alt="Christmas party background">
-      </video>
+
+  <div class="media-container">
+    <div class="logo">
+      <img id="mainImage" class="fade-oas" src="Images/XIE Logo.png" alt="Main Display">
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Samah Skilling Student Website. All rights reserved by Samah Skilling Xaviers Campus</p>
-  </footer>
-
-  <!-- Pop-Up Modal (No Close Button) -->
-  <div class="modal fade" id="updateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="updateModalLabel" aria-hidden="true">
+  <!-- Pop-Up Modal -->
+  <div class="modal fade" id="updateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content border-0 shadow-lg">
         <div class="modal-header bg-primary text-white justify-content-center">
-          <h5 class="modal-title" id="updateModalLabel">📢 Latest Update</h5>
+          <h5 class="modal-title">📢 Latest Update</h5>
         </div>
         <div class="modal-body text-center">
-          <p><strong>Upcoming Event:</strong> Christmas Celebration 2025 at Xavier’s Campus 🎄</p>
-          <p>Date: <b>December, 01, 2025</b></p>
-          <p>Stay tuned for more exciting updates and videos!</p>
+          <!-- JS will rewrite this content -->
         </div>
       </div>
     </div>
   </div>
 
+  <footer>
+    <p>&copy; 2025 Samah Skilling Student Website. All rights reserved.</p>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
-    // Automatically show the pop-up when the page loads
     window.addEventListener('load', () => {
+
       const updateModal = new bootstrap.Modal(document.getElementById('updateModal'));
       updateModal.show();
+
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth() + 1;
+      const day = today.getDate();
+
+      const eventDate = new Date(`${year}-12-01`);
+      const diffTime = eventDate - today;
+      const daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      const modalBody = document.querySelector("#updateModal .modal-body");
+      const mainImage = document.getElementById("mainImage");
+
+      /* ⭐ AUTO UPDATE LOGIC */
+      if (month === 11) {
+
+        modalBody.innerHTML = `
+          <p><strong>🎆 November Burst Update</strong></p>
+          <p>The image is now in <b>Burst Mode</b> for November!</p>
+          <p><b>${daysLeft} days left</b> until December 1st.</p>
+        `;
+        mainImage.src = "Images/XIE Logo.png";
+
+      } else if (month === 12 && day >= 1) {
+
+        modalBody.innerHTML = `
+          <p><strong>🎉 December Update Live!</strong></p>
+          <p>The <b>Unburst Christmas Theme</b> is now active.</p>
+        `;
+        mainImage.src = "Images/Xavier's Campus XIE Christmas Banner 2025.gif";
+
+      } else if (diffTime > 0) {
+
+        modalBody.innerHTML = `
+          <p><strong>Upcoming Event:</strong> Christmas Celebration 🎄</p>
+          <p>Date: <b>December 01, ${year}</b></p>
+          <p><b>${daysLeft} days left</b> until the Christmas theme unlocks!</p>
+        `;
+        mainImage.src = "Images/XIE Logo.png";
+      }
+
+      /* ⭐ Restart fade animation */
+      mainImage.classList.remove("fade-oas");
+      setTimeout(() => {
+        mainImage.classList.add("fade-oas");
+      }, 50);
+
     });
   </script>
-</body>
 
+</body>
 </html>
