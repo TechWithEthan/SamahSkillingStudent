@@ -2,144 +2,110 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Virtual Background Video Player for Samah Skilling Students">
-  <meta name="keywords" content="Virtual Background, Video Player, Samah Skilling, Students">
-  <meta name="author" content="Samah Skilling">
-  <title>Virtual Background Video Player</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XIE Auto Update Theme</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="icon" href="Images/xie-logo.png" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: serif;
+    background: powderblue;
+  }
 
-  <style>
-    body, html {
-      height: 100%;
-      font-family: serif;
-      background-color: powderblue;
-      margin: 0;
-      padding: 0;
+  /* MAIN WRAPPER */
+  .media-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* 🔥 UNIVERSAL RESPONSIVE IMAGE + GIF */
+  .auto-img {
+    width: 100%;            /* Full width on all screens */
+    height: auto;           /* Auto adjust height */
+    max-width: 100%;        /* Prevent overflow */
+    max-height: 80vh;       /* Auto-fit screen height (PC + laptop) */
+    object-fit: contain;    /* No distortion */
+    border-radius: 10px;
+    background: white;
+  }
+
+  /* 📱 Tablet Optimization */
+  @media (max-width: 768px) {
+    .auto-img {
+      max-height: 60vh;     /* Adjust height for tablets */
     }
+  }
 
-    .media-container {
-      width: 900px;
-      max-width: 100%;
-      margin: 20px auto;
-      text-align: center;
+  /* 📱 Mobile Optimization */
+  @media (max-width: 480px) {
+    .auto-img {
+      max-height: 50vh;     /* Best for small phones */
     }
+  }
 
-    /* ⭐ OAS Fade-in Animation */
-    .fade-oas {
-      opacity: 0;
-      transform: scale(0.95);
-      animation: fadeInOAS 1.8s ease-out forwards;
-    }
+  /* Fade Animation */
+  .fade-oas {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInOAS 1.8s ease-out forwards;
+  }
+  @keyframes fadeInOAS {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
 
-    @keyframes fadeInOAS {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
+  /* Glow Effect */
+  .glow-burst {
+    animation: glow 2s infinite;
+  }
+  @keyframes glow {
+    0%,100% { filter: drop-shadow(0 0 0px gold); }
+    50% { filter: drop-shadow(0 0 15px gold); }
+  }
 
-    .media-container img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    footer {
-      background-color: darkblue;
-      color: #fff;
-      padding: 5px 0;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+  footer {
+    background: darkblue;
+    color: white;
+    text-align: center;
+    padding: 6px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+  }
+</style>
 </head>
 
 <body>
 
-  <div class="media-container">
-    <div class="logo">
-      <img id="mainImage" class="fade-oas" src="Images/XIE Logo.png" alt="Main Display">
-    </div>
-  </div>
+<!-- FIRST IMAGE -->
+<div class="media-container">
+  <img id="mainImage" class="auto-img fade-oas"
+       src="Images/XIE Logo.png"
+       alt="Main Logo">
+</div>
 
-  <!-- Pop-Up Modal -->
-  <div class="modal fade" id="updateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg">
-        <div class="modal-header bg-primary text-white justify-content-center">
-          <h5 class="modal-title">📢 Latest Update</h5>
-        </div>
-        <div class="modal-body text-center">
-          <!-- JS will rewrite this content -->
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- CHRISTMAS GIF -->
+<div class="media-container">
+  <img src="Images/Xavier's Campus XIE Christmas Banner 2025.gif"
+       alt="Christmas Banner"
+       class="auto-img glow-burst">
+</div>
+<br>
+<br>
+<footer>
+  <p>&copy; <span id="autoYear"></span> Samah Skilling Student Website</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Samah Skilling Student Website. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    window.addEventListener('load', () => {
-
-      const updateModal = new bootstrap.Modal(document.getElementById('updateModal'));
-      updateModal.show();
-
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = today.getMonth() + 1;
-      const day = today.getDate();
-
-      const eventDate = new Date(`${year}-12-01`);
-      const diffTime = eventDate - today;
-      const daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-      const modalBody = document.querySelector("#updateModal .modal-body");
-      const mainImage = document.getElementById("mainImage");
-
-      /* ⭐ AUTO UPDATE LOGIC */
-      if (month === 11) {
-
-        modalBody.innerHTML = `
-          <p><strong>🎆 November Burst Update</strong></p>
-          <p>The image is now in <b>Burst Mode</b> for November!</p>
-          <p><b>${daysLeft} days left</b> until December 1st.</p>
-        `;
-        mainImage.src = "Images/XIE Logo.png";
-
-      } else if (month === 12 && day >= 1) {
-
-        modalBody.innerHTML = `
-          <p><strong>🎉 December Update Live!</strong></p>
-          <p>The <b>Unburst Christmas Theme</b> is now active.</p>
-        `;
-        mainImage.src = "Images/Xavier's Campus XIE Christmas Banner 2025.gif";
-
-      } else if (diffTime > 0) {
-
-        modalBody.innerHTML = `
-          <p><strong>Upcoming Event:</strong> Christmas Celebration 🎄</p>
-          <p>Date: <b>December 01, ${year}</b></p>
-          <p><b>${daysLeft} days left</b> until the Christmas theme unlocks!</p>
-        `;
-        mainImage.src = "Images/XIE Logo.png";
-      }
-
-      /* ⭐ Restart fade animation */
-      mainImage.classList.remove("fade-oas");
-      setTimeout(() => {
-        mainImage.classList.add("fade-oas");
-      }, 50);
-
-    });
-  </script>
+<script>
+  document.getElementById("autoYear").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
